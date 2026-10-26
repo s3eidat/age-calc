@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Age Calc — Exact Age, Next Birthday &amp; Hijri Birth Date | S3eidat Tools</title>
+<meta name="description" content="Exact age in years, months and days, total days and weeks, next birthday countdown and weekday, Hijri date of birth, zodiac, and compare two people. Free and private.">
+<meta property="og:title" content="Age Calc — free, private age calculator">
+<meta property="og:description" content="Exact age, next birthday and fun stats. Runs 100% in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="age-calc">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Age Calc</h1>
+    <p>Your exact age in years, months and days, the countdown to your next birthday, your Hijri date of birth, and how you compare with someone else.</p>
+  </section>
+
+  <div class="ag-grid">
+    <section class="card stack">
+      <h2>Dates</h2>
+      <label class="field">Date of birth
+        <input class="input" id="dob" type="date" min="0001-01-01" max="9999-12-31">
+      </label>
+      <div class="field">
+        <label for="on">Age on</label>
+        <div class="row nowrap">
+          <input class="input grow" id="on" type="date" min="0001-01-01" max="9999-12-31">
+          <button type="button" class="btn" id="today">Today</button>
+        </div>
+      </div>
+      <hr class="sep">
+      <h2>Compare with someone <span class="faint">(optional)</span></h2>
+      <label class="field">Name
+        <input class="input" id="name2" autocomplete="off" maxlength="40" placeholder="e.g. Sara" dir="auto">
+      </label>
+      <label class="field">Their date of birth
+        <input class="input" id="dob2" type="date" min="0001-01-01" max="9999-12-31">
+      </label>
+      <p class="faint" id="err" role="alert"></p>
+    </section>
+
+    <section class="card stack">
+      <div class="row between">
+        <h2>Your age</h2>
+        <button class="btn small" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy</button>
+      </div>
+      <div class="age-hero" id="hero"><div class="empty"><b>Enter your date of birth</b>Everything is worked out on this device.</div></div>
+      <div class="stats" id="totals"></div>
+      <div class="grid-2 tight" id="facts"></div>
+      <div id="cmp"></div>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
